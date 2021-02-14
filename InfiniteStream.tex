@@ -1,0 +1,110 @@
+% A '%' character causes TeX to ignore all remaining text on the line,
+% and is used for comments like this one.
+% All LaTex files require the commands:
+% \documentclass (with argument)
+% \begin{document} command
+% \end{document} command
+
+% specifies the document class. We usually use article but there are others. 
+\documentclass{article}   
+
+% these are standard packages used for the math symbols
+\usepackage{amsmath,amssymb,amsthm, graphicx, color, gensymb,mathpazo, enumitem}
+
+% These commands below is to make sure the numbering of these are consistent with theorem
+% If you are not sure what something means, delete them, build a new file and see the
+% difference between the files. You can ignore this part for now.
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{notation}[theorem]{Notation}
+
+
+\begin{document}
+
+% Title of my document
+\title{\Large Infinite Stream of Electrons}
+
+% The author command places text right after title
+\author{Prannaya Gupta}
+\date{\today}
+\maketitle
+
+\section{Question}
+Let's say you have an infinite stream of electrons spaced $s = 1mm$ apart. These electrons are initially charged with an initial kinetic energy of $E_k = 20keV$. These electrons enter a changing magnetic field $B_1 = B_o\sqrt{e^{t^2-1}+5}$, where $B_o = 2.3232323232...T$ facing out of the page. Certainly, we can therefore gather that the stream tilts upwards, but let's just assume the radius r is constant.
+\\
+\\
+After a time $T = 5s$, this stream exits the magnetic field to move an arbitrary distance upwards to enter a wire loop of mass $M = 16kg$ and diameter $d = 3cm$. After exiting the loop, the electrons just leave to an electron storage, never to be seen again. Now, once there is assured to be absolutely no change in the current of the loop, a uniform magnetic field $B_2 = 2.1111111...T$ facing downwards perpendicular to the electrons' motion before entering the loop is placed on the loop, and a torque is therefore exerted. Find the angular velocity of the loop when it rotates exactly $\frac{\pi}{2}$ radians.
+\\
+\\
+The moment of inertia of a hoop about any diameter, $I_{loop} = \frac{1}{2}MR^2$.
+\\
+The mass of an electron, $m_e = 9.109383701528 \times 10^{-31} kg$.
+\\
+The elementary charge, $q_e = 1.602176634 \times 10^{-19} C$.
+
+\begin{enumerate}[label=\uppercase\alph*)]
+  \item $3.26 \times 10^{-6}$ rad/s
+  \item 0.00181 rad/s
+  \item 0.00219 rad/s
+  \item \textbf{0.0426 rad/s}
+  \item $1.37 \times 10^{13}$ rad/s
+\end{enumerate}
+
+\section{Solution}
+
+\begin{align*}
+r &= \frac{mv}{qB_o} \\
+&= \frac{\sqrt{2m_eE_k}}{qB_o} \\
+\\
+qvB_1 &= \frac{mv^2}{r} \\
+v &= \frac{rq}{m}B_1 \\
+a &= \frac{rq}{m}\dot{B_1} \\
+F_{net} &= rq\dot{B_1} \\
+J &= \int_0^T F_{net} dt \\
+&= rq[B_1(T) - B_1(0)] \\
+&= \frac{\sqrt{2m_eE_k}}{B_o}[B_o\sqrt{e^{T^2-1}+5} - B_o\sqrt{e^{0^2-1}+5}] \\
+\\
+p_f &= p_i + J \\
+&= \sqrt{2m_eE_k} + \frac{\sqrt{2m_eE_k}}{B_o}[B_o\sqrt{e^{T^2-1}+5} - B_o\sqrt{e^{0^2-1}+5}] \\
+&= \sqrt{2m_eE_k} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}]\\
+\\
+\therefore v &= \sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \\
+\\
+I &= nAqv \\
+&= \frac{N}{\pi d}q_ev \\
+&= \frac{\pi d}{s} \frac{1}{\pi d} q_ev \\
+&= \frac{q_ev}{s} \\
+&= \frac{q_e}{s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}]
+\end{align*}
+
+\begin{align*}
+\tau &= IAB_2 \\
+&= \frac{q_e}{s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \cdot \pi (\frac{d}{2})^2\cos{\theta} \times B_2 \\
+&= \frac{\pi d^2q_eB_2\cos{\theta}}{4s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \\
+\\
+E &= \int_0^\frac{\pi}{2}\tau d\theta \\
+&= \int_0^\frac{\pi}{2} \frac{\pi d^2q_eB_2}{4s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}]\cos{\theta}  d\theta \\
+&= \frac{\pi d^2q_eB_2}{4s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \int_0^\frac{\pi}{2}\cos{\theta}  d\theta \\
+&= \frac{\pi d^2q_eB_2}{4s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}][sin(\frac{\pi}{2}) - sin(0)] \\
+&= \frac{\pi d^2q_eB_2}{4s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \\
+&= I_{loop}\omega^2
+\\\\
+I_{loop} &= \frac{1}{2}MR^2 \\
+&= \frac{1}{2}M(\frac{d}{2})^2 \\
+&= \frac{1}{8}Md^2
+\\\\
+I_{loop}\omega^2 &= \frac{\pi d^2q_eB_2}{4s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \\
+\frac{1}{8}Md^2\omega^2 &= \frac{\pi d^2q_eB_2}{4s}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \\
+% \omega^2 &= \frac{2\pi q_eB_2}{Ms}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}] \\
+\omega &= \sqrt{\frac{2\pi q_eB_2}{Ms}\sqrt{\frac{2E_k}{m_e}} [1 + \sqrt{e^{T^2-1}+5} - \sqrt{e^{0^2-1}+5}]} \\
+\end{align*}
+Upon substitution, we get $\omega$ = 0.042582009977078686 rad/s $\approx$ \textbf{0.0426 rad/s}
+
+
+\end{document}
