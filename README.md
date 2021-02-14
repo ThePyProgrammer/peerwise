@@ -1,2 +1,2 @@
-# peerwise
+# Peerwise
 My questions on Peerwise.
