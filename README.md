@@ -3,7 +3,7 @@ My questions on Peerwise.
 
 ## InfiniteStream (Magnetostatic)
 <p align="center">
-  <img src="Magnetostatic/InfiniteStream/infiniteStream.png" align="center" height="360" />
+  <img src="Y4/S1/Magnetostatic/InfiniteStream/infiniteStream.png" align="center" height="360" />
 </p>
 
 ### Question
@@ -27,3 +27,20 @@ The elementary charge, ![formula](https://render.githubusercontent.com/render/ma
 <p>Now, you decide to do very interesting thing: you use the python random module to generate a random integer between 2 and a super large number. You label this value as k in the interpreter, but do not check what k is. Now you load this values of k into a "Move-inator", which allows you to go to a specific x and y with respect to the assumed origin. What this "Move-inator" now does is it sends the&nbsp;"Charged-Particle-inator" to points (k<sup>n</sup>, k<sup>n</sup>) for all n from 0 to infinity (let's just assume that the "Move-inator" is able to do this within the stopped time) and releases one charge there.</p>
 <p>Now it returns, and you haven't died (consider yourself lucky). Now you have set the Move-inator to go to the points&nbsp;(-k<sup>n</sup>,- k<sup>n</sup>) for all n from 0 to infinity (again, let's just assume that the "Move-inator" is able to do this within the stopped time), and to each n, it swaps another charge knob that toggles the charge between positive and negative while keeping the magnitude intact (i.e. at (-k<sup>0</sup>, -k<sup>0</sup>), a negative charge of q<sub>o</sub> is released, while at (-k, -k), a positive charge of q<sub>o</sub> is released and so on).&nbsp;</p>
 <p>Now you use another device you have created called the "Uncharge-inator" and use it to completely discharge yourself, and then another called the "Charge-inator" to charge yourself to the same q<sub>o</sub> which you still do not know. Now you relocate to the assumed origin and stop the the "Stop-Time-inator". What is the acceleration that you, a 60-year old esteemed physicist who has spent years devising this complex system and has a mass of m, experience?</p>
+
+### Answer
+<p>To calculate this, you must use the formula F = (1/4&pi;&epsilon;0) * (Qq/r<sup>2</sup>).</p>
+<p>Here, we know that Q and q are both equal to q<sub>o</sub>, which you already know as a constant, but the direction may change based on the charge of the charges dropped by the "Charged-Particle-inator".</p>
+<p>Thus, you extract it as F = (q<sub>o</sub>/4&pi;&epsilon;0) * 1/r<sup>2</sup>.</p>
+<p>To calculate r<sup>2</sup>, what you do is you calculate based on the points as given. From this we have r<sup>2</sup> = k<sup>2n</sup> + k<sup>2n</sup> = 2k<sup>2n</sup>.<sup><br /></sup></p>
+<p>We thus derive a series representing the force exhibited for the positive direction (i.e. x and y are both positive) F<sub>1</sub> =&nbsp;(q<sub>o</sub>/4&pi;&epsilon;<sub>0</sub>) * (1/2k<sup>0</sup>&nbsp;+ 1/2k<sup>2</sup> + 1/2k<sup>4</sup> + ....), which faces south-west.</p>
+<p>Meanwhile, we can also derive a similar&nbsp;series representing the force exhibited for the positive direction (i.e. x and y are both positive) F<sub>2</sub> = (q<sub>o</sub>/4&pi;&epsilon;<sub>0</sub>) * (1/2k<sup>0</sup>&nbsp;- 1/2k<sup>2</sup> + 1/2k<sup>4</sup>&nbsp;- ....), which faces south-west as well.</p>
+
+<p>We add these two forces up and we get F<sub>net</sub> =&nbsp;(q<sub>o</sub>/4&pi;&epsilon;<sub>0</sub>) *&nbsp;(1/k<sup>0</sup>&nbsp;+ 1/k<sup>4</sup>&nbsp;+ 1/k<sup>8</sup>&nbsp;+ ....), which faces south-west.</p>
+
+<p>Now, I would like to divert to derive an expression for S = 1/k<sup>0</sup> + 1/k<sup>4</sup> + 1/k<sup>8</sup> + ...</p>
+<p>To do this, we derive k<sup>4</sup>S = k<sup>4</sup> + 1/k<sup>0</sup> + 1/k<sup>4</sup> + .... = k<sup>4</sup> + S</p>
+<p>From this, we get S = k<sup>4</sup>/(k<sup>4</sup> - 1)</p>
+
+<p>Now substituting back in, we get F<sub>net</sub> =&nbsp;(q<sub>o</sub>/4&pi;&epsilon;<sub>0</sub>) * (k<sub>4</sub>/(k<sub>4</sub> - 1)) = ma</p>
+<p>:. a =&nbsp;(q<sub>o</sub>/4&pi;&epsilon;<sub>0</sub>) * (k<sup>4</sup>/m(k<sup>4</sup> - 1)), facing south-west</p>
