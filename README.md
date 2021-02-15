@@ -3,7 +3,7 @@ My questions on Peerwise.
 
 ## InfiniteStream (Magnetostatic)
 <p align="center">
-  <img src="Magnetostatic/InfiniteStream/infiniteStream.png" align="center" height="360" />
+  <img src="Y4/S1/Magnetostatic/InfiniteStream/infiniteStream.png" align="center" height="360" />
 </p>
 
 ### Question
