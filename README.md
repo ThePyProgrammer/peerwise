@@ -1,4 +1,8 @@
 # Peerwise
+**done by Prannaya Gupta**
+
+Part of PO Modules at NUS High School
+
 My questions on Peerwise.
 
 ## InfiniteStream (Magnetostatic)
